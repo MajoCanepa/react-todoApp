@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export const TodoListItem = ({ todoList, completeTodo }) => {
     return (
@@ -11,15 +11,15 @@ export const TodoListItem = ({ todoList, completeTodo }) => {
                     todoList.map((todoItem) => (
                         <li
                             key={todoItem.id}
-                            className={`d-flex justify-content-between mb-2 alert ${todoItem.done ? 'alert-success' : 'alert-warning'
+                            className={`d-flex justify-content-between mb-2 alert ${(todoItem.done) ? 'alert-success' : 'alert-warning'
                                 }`}
                         >
                             <span>{todoItem.desc}</span>
                             <button
-                                className="btn btn-sm btn-primary"
+                                className={`btn btn-sm ${(todoItem.done) ? 'btn-success' : 'btn-warning'}`}
                                 onClick={() => completeTodo(todoItem.id)}
                             >
-                                {todoItem.done ? 'Completado' : 'Pendiente'}
+                                {todoItem.done ? 'Completada' : 'Completar'}
                             </button>
                         </li>
                     ))

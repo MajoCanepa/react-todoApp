@@ -15,7 +15,7 @@ export const TodoApp = () => {
   }
 
   // Lógica para completar un todo
-
+  // Recorrer la lista de Todos y actualizar el estado de done
   const completeTodo = (id) => {
     const updateTodos = todoList.map((todoItem) => {
       if (todoItem.id === id) {
@@ -60,10 +60,18 @@ export const TodoApp = () => {
 
       {/* TodoAdd */}
       <div className="row mb-3">
-        <AddTodo todo={todo} inputChange={inputChange} addTodo={addTodo} />
+        <AddTodo
+          todo={todo}
+          inputChange={inputChange}
+          addTodo={addTodo}
+        />
 
         {/* TodoList */}
-        <TodoListItem todoList={todoList} completeTodo={completeTodo} />
+        <TodoListItem
+          todoList={todoList}
+          completeTodo={completeTodo}
+
+        />
       </div>
     </div>
   );
